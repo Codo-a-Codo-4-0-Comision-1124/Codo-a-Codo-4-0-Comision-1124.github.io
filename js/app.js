@@ -1,3 +1,5 @@
+import Player from "./player.js"
+
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
     'use strict'
@@ -18,3 +20,9 @@
         }, false)
       })
   })()
+
+
+  let myPlayer = new Player()
+
+  myPlayer.render();
+  //myPlayer.play();
