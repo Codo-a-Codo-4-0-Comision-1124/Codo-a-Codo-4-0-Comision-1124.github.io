@@ -28,6 +28,7 @@ class UserProfile {
 
     load() {
         console.log("CArge datos de una base de datos...")
+        localStorage.getItem("UserProfile"); // Devuelve
     }
 
     toString(){
