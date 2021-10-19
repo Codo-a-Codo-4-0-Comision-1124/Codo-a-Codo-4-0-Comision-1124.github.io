@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <div id="controls">
+        <span v-if="controls_enabled==true">
+            {{ message }}
+        </span>
+        <div>Contador <button v-on:click="counter +=1">+</button> {{ counter }} <button
+                v-on:click="counter -=1">-</button></div>
+        <input v-model="message" type="text">
+        <input v-model="controls_enabled" type="checkbox">
+    </div>
     <div id="player">
     </div>
     <script type="module" src="../js/player.js"></script>
     <script type="module" src="../js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="../js/player_controls.js"></script>
 </body>
+
 </html>
