@@ -10,13 +10,21 @@
 
 <body>
     <div id="controls">
+        <movie></movie>
         <span v-if="controls_enabled==true">
             {{ message }}
         </span>
-        <div>Contador <button v-on:click="counter +=1">+</button> {{ counter }} <button
-                v-on:click="counter -=1">-</button></div>
+        <div>Contador 
+            <button v-on:click=counterAdd()>+</button>
+             {{ counter }} 
+            <button v-show="shouldShowSubstract()" v-on:click=counterSubstract()>-</button>
+        </div>
         <input v-model="message" type="text">
         <input v-model="controls_enabled" type="checkbox">
+        <input v-model="current_time" min="0" :max="total_time" type="range">
+        <span>
+            Tiempo restante: {{ remainingTime }}
+        </span>
     </div>
     <div id="player">
     </div>

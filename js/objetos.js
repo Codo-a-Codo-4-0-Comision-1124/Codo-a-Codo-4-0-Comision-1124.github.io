@@ -23,7 +23,8 @@ class UserProfile {
 
     save(){
         console.log("ACa se conecta a una base de datos...");
-        localStorage.setItem("UserProfile", this);
+        let myJSONObject = JSON.stringify(this);
+        localStorage.setItem("UserProfile", myJSONObject);
     }
 
     load() {
